@@ -3,7 +3,7 @@ package com.desafio.entrevistaitau.dto;
 import com.desafio.entrevistaitau.entities.enums.Status;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-@JsonInclude(value = JsonInclude.Include.NON_EMPTY, content = JsonInclude.Include.NON_NULL )
+@JsonInclude(value = JsonInclude.Include.NON_EMPTY, content = JsonInclude.Include.NON_NULL)
 public class CarroDTO {
 
     private Long id;

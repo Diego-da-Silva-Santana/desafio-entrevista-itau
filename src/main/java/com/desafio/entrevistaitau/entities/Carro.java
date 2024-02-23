@@ -6,8 +6,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.Date;
-
 @Entity
 @Table(name = "tb_carro")
 public class Carro {
@@ -48,6 +46,35 @@ public class Carro {
         this.placa = placa;
     }
 
+    public CarroDTO toCarroDTO() {
+        return new CarroDTO(id, chassi, nome, fabricante, ano, cor, status, placa);
+    }
+
+    public void atualizacaoDadosCarro(CarroDTO carroDTO) {
+
+        if (carroDTO.getChassi() != null) {
+            this.chassi = carroDTO.getChassi();
+        }
+        if (carroDTO.getNome() != null) {
+            this.nome = carroDTO.getNome();
+        }
+        if (carroDTO.getFabricante() != null) {
+            this.fabricante = carroDTO.getFabricante();
+        }
+        if (carroDTO.getAno() != null) {
+            this.ano = carroDTO.getAno();
+        }
+        if (carroDTO.getCor() != null) {
+            this.cor = carroDTO.getCor();
+        }
+        if (carroDTO.getStatus() != null) {
+            this.status = carroDTO.getStatus();
+        }
+        if (carroDTO.getPlaca() != null) {
+            this.placa = carroDTO.getPlaca();
+        }
+    }
+
     public Long getId() {
         return id;
     }
@@ -80,7 +107,5 @@ public class Carro {
         return placa;
     }
 
-    public CarroDTO toCarroDTO(){
-        return new CarroDTO(id, chassi, nome, fabricante, ano, cor, status, placa);
-    }
+
 }
