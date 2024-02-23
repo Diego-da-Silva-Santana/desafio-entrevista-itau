@@ -1,17 +1,16 @@
 package com.desafio.entrevistaitau.dto;
 
 import com.desafio.entrevistaitau.entities.enums.Status;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.time.LocalDateTime;
-import java.util.Date;
-
+@JsonInclude(value = JsonInclude.Include.NON_EMPTY, content = JsonInclude.Include.NON_NULL )
 public class CarroDTO {
 
     private Long id;
     private String chassi;
     private String nome;
     private String fabricante;
-    private Date ano;
+    private Integer ano;
     private String cor;
     private Status status;
     private String placa;
@@ -21,7 +20,7 @@ public class CarroDTO {
 
     public CarroDTO(Long id, String chassi,
                     String nome, String fabricante,
-                    Date ano, String cor,
+                    Integer ano, String cor,
                     Status status, String placa) {
         this.id = id;
         this.chassi = chassi;
@@ -49,7 +48,7 @@ public class CarroDTO {
         return fabricante;
     }
 
-    public Date getAno() {
+    public Integer getAno() {
         return ano;
     }
 

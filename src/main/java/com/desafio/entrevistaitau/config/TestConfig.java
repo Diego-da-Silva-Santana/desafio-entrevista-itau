@@ -21,11 +21,12 @@ public class TestConfig implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Carro c1 = new Carro(null,"9BWZZZ377VT004251","Lamborghini Urus", "Automobili Lamborghini S.P.A.", new Date(2023-11-28), "Branco", Status.ALUGADO, "OPA0148");
-        Carro c2 = new Carro(null,"1PPZZZ377VT004285","Monza", " Monza S.P.A.", new Date(2023-11-28), "Preto", Status.RESERVADO, "SSS0894");
+        Carro c1 = new Carro(null, "9BWZZZ377VT004251", "Lamborghini Urus", "Automobili Lamborghini S.P.A.", 2023, "Branco", Status.ALUGADO, "OPA0148");
+        Carro c2 = new Carro(null, "1PPZZZ377VT004285", "Monza", " Monza S.P.A.", 2022, "Preto", Status.RESERVADO, "SSS0894");
+        Carro c3 = new Carro(null, "I96ZZZ377VT004285", "Corsa", " Chevrollet S.P.A.", 2015, "Preto", Status.RESERVADO, "SSS0894");
+        Carro c4 = new Carro(null, "0JRZZZ377VT004285", "New Civic", " Honda S.P.A.", 2014, "Preto", Status.RESERVADO, "SSS0894");
 
-        carroRepository.saveAll(Arrays.asList(c1,c2));
-
+        carroRepository.saveAll(Arrays.asList(c1, c2, c3, c4));
 
     }
 }

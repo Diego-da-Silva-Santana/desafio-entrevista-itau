@@ -23,7 +23,7 @@ public class Carro {
     @NotBlank(message = "Nome do fabricante obrigatório")
     private String fabricante;
     @NotNull(message = " Data do ano obrigatório")
-    private Date ano;
+    private Integer ano;
     @NotBlank(message = "Cor do carro obrigatório")
     private String cor;
     @NotNull(message = "Status obrigatório")
@@ -36,7 +36,7 @@ public class Carro {
 
     public Carro(Long id, String chassi,
                  String nome, String fabricante,
-                 Date ano, String cor,
+                 Integer ano, String cor,
                  Status status, String placa) {
         this.id = id;
         this.chassi = chassi;
@@ -64,7 +64,7 @@ public class Carro {
         return fabricante;
     }
 
-    public Date getAno() {
+    public Integer getAno() {
         return ano;
     }
 
