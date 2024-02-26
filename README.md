@@ -10,6 +10,8 @@ A Aplicação consiste em uma API Rest, onde seja possível receber dados de car
 
 ## Modelo conceitual
 
+![diagrama](https://github.com/Diego-da-Silva-Santana/desafio-entrevista-itau/assets/129296254/de027234-281f-45b1-951a-d02ac43024d2)
+
 
 
 
