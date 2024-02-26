@@ -25,7 +25,7 @@ public class Carro {
     @NotBlank(message = "Cor do carro obrigatório")
     private String cor;
     @NotNull(message = "Status obrigatório")
-    private Status status;
+    private Integer status;
     @NotBlank(message = "Placa do carro obrigatório")
     private String placa;
 
@@ -42,12 +42,12 @@ public class Carro {
         this.fabricante = fabricante;
         this.ano = ano;
         this.cor = cor;
-        this.status = status;
+        setStatus(status);
         this.placa = placa;
     }
 
     public CarroDTO toCarroDTO() {
-        return new CarroDTO(id, chassi, nome, fabricante, ano, cor, status, placa);
+        return new CarroDTO(id, chassi, nome, fabricante, ano, cor, Status.valueOf(status), placa);
     }
 
     public void atualizacaoDadosCarro(CarroDTO carroDTO) {
@@ -68,7 +68,7 @@ public class Carro {
             this.cor = carroDTO.getCor();
         }
         if (carroDTO.getStatus() != null) {
-            this.status = carroDTO.getStatus();
+            this.status = carroDTO.getStatus().getCode();
         }
         if (carroDTO.getPlaca() != null) {
             this.placa = carroDTO.getPlaca();
@@ -100,12 +100,16 @@ public class Carro {
     }
 
     public Status getStatus() {
-        return status;
+        return Status.valueOf(status);
     }
 
     public String getPlaca() {
         return placa;
     }
 
-
+    public void setStatus(Status status) {
+        if (status != null) {
+            this.status = status.getCode();
+        }
+    }
 }

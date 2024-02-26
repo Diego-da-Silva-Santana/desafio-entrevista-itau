@@ -19,7 +19,8 @@ public class CarroDTO {
     }
 
     public CarroDTO(Long id, String chassi,
-                    String nome, String fabricante,
+                    String nome,
+                    String fabricante,
                     Integer ano, String cor,
                     Status status, String placa) {
         this.id = id;
