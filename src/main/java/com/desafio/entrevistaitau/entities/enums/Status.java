@@ -1,5 +1,7 @@
 package com.desafio.entrevistaitau.entities.enums;
 
+import java.util.Optional;
+
 public enum Status {
 
     ATIVADO(1),
@@ -16,7 +18,6 @@ public enum Status {
     public int getCode() {
         return code;
     }
-
 
     public static Status valueOf(int code) {
         for (Status value : Status.values()) {

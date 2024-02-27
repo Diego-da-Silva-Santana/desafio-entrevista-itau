@@ -46,6 +46,11 @@ public class Carro {
         this.placa = placa;
     }
 
+    public Carro(String fabricante, int ano) {
+        this.fabricante = fabricante;
+        this.ano = ano;
+    }
+
     public CarroDTO toCarroDTO() {
         return new CarroDTO(id, chassi, nome, fabricante, ano, cor, Status.valueOf(status), placa);
     }

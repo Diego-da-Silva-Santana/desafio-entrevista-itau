@@ -2,9 +2,7 @@ package com.desafio.entrevistaitau.services;
 
 import com.desafio.entrevistaitau.dto.CarroDTO;
 import com.desafio.entrevistaitau.entities.Carro;
-import com.desafio.entrevistaitau.entities.enums.Status;
 import com.desafio.entrevistaitau.exceptions.DuplicateCarException;
-import com.desafio.entrevistaitau.exceptions.IllegalArgumentException;
 import com.desafio.entrevistaitau.exceptions.ResourceNotFoundException;
 import com.desafio.entrevistaitau.repositories.CarroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,6 @@ public class CarroService {
 
     @Autowired
     private CarroRepository repository;
-
 
     public List<CarroDTO> listagemCarros(String nome, String fabricante, Integer ano) {
         List<Carro> carros = repository.findAll();
@@ -64,11 +61,6 @@ public class CarroService {
 
     public CarroDTO atualizarStatusCarro(Long id, CarroDTO carroDTO) {
 
-        try {
-            Status status = Status.valueOf(carroDTO.getStatus().name());
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Status inválido: " + carroDTO.getStatus());
-        }
         Optional<Carro> possivelDadosCarroEntity = this.repository.findById(id);
         if (possivelDadosCarroEntity.isEmpty()) {
             throw new ResourceNotFoundException("Dados do carro não foi encontrado na base de dados.");
